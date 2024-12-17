@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Conta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="#" class="nav-item">Cadastrar Conta</a>
+        <a href="#" class="nav-item">Minhas contas</a>
+        <a href="#" class="nav-item">Dashboard</a>
+    </div>
+
+    <div class="section-title">
+        <h1>Nova Conta</h1>
+    </div>
+    <div class="container">
+            <form action="" onsubmit="submitForm(event)">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Nome da conta">
+                <br>
+                <label for="valor">Valor:</label>
+                <input type="text" id="valor" name="valor" placeholder="Valor da conta">
+                <br>
+                <label for="tipo">Tipo:</label>
+                <select id="tipo" name="tipo">
+                    <option value="contaDeLuz">Conta de luz</option>
+                    <option value="contaDeGas">Conta de gás</option>
+                    <option value="internet">Internet</option>
+                    <option value="telefone">Telefone</option>
+                    <option value="condominio">Condomínio</option>
+                    <option value="Outros">Outros</option>
+                </select>
+                <br>
+                <label for="situacao">Situação:</label>
+                <select id="situacao" name="situacao">
+                    <option value="aberto">Aberto</option>
+                    <option value="fechado">Fechado</option>
+                    <option value="bloqueado">Bloqueado</option>
+                </select>
+                <br>
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" placeholder="Data da conta">
+                <br>
+                <label for="numero">Número:</label>
+                <input type="number" id="numero" name="numero" placeholder="Número da conta">
+                <br>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="Telefone da conta">
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email da conta">
+                <br>
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" placeholder="Descrição da conta"></textarea>
+                <br>
+                <button type="submit">Cadastrar</button>
+            </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
