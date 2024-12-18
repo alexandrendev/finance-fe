@@ -1,50 +1,50 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.navbar{
+.navbar {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: start;
-    background-color: rgb(0,123,255);
+    background-color: #007bb5;
     padding: 10px;
 }
 
-.nav-item{
+.nav-item {
     padding: 10px;
     color: white;
     text-decoration: none;
     font-size: 20px;
 }
 
-.section-title{
-    background-color: rgb(216,220, 220);
+.section-title {
+    background-color: #e0f7fa;
     color: black;
     margin: 0px;
     padding: 5px;
-    display: block
+    display: block;
     flex-direction: row;
     font-size: 20px;
     text-align: center;
     padding-bottom: 50px;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    background-color: rgb(216,220, 220);  
+    background-color: #e0f7fa;
     justify-content: center;
     align-items: start;
 }
 
-.content{
-    background-color: rgb(216,220, 220);
+.content {
+    background-color: #e0f7fa;
     width: 60%;
     display: flex;
     flex-direction: row;
@@ -54,7 +54,7 @@
 }
 
 .card {
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -86,7 +86,7 @@
 }
 
 .btn {
-    background-color: #007bff;
+    background-color: #007bb5;
     color: white;
     border: none;
     border-radius: 5px;
@@ -96,11 +96,10 @@
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #005b88;
 }
 
-
-.footer{
+.footer {
     display: flex;
     flex-direction: row;
     align-items: space-between;
@@ -113,25 +112,23 @@
     width: 100%;
     background-color: gray;
     color: white;
-
 }
 
-.footer-container{
+.footer-container {
     display: flex;
     flex-direction: row;
     align-items: start;
     justify-content: start;
     flex-wrap: wrap;
-
 }
-.footer-text{
+
+.footer-text {
     text-align: center;
     margin-top: 15px;
     width: 100%;
 }
 
-
-.footer ul{
+.footer ul {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -139,31 +136,29 @@
     list-style: none;
     margin-right: 100px;
 }
-.footer li{
+
+.footer li {
     padding: 5px;
 }
 
-.footer li a{
+.footer li a {
     text-decoration: none;
     padding: 5px;
     color: white;
-
 }
-
 
 .footer li a:hover {
     color: #FFD700;
 }
 
-
 form {
     width: 50%;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
+    background-color: #ffffff;
+    border: 1px solid #b0bec5;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -171,7 +166,7 @@ form {
 
 form label {
     font-weight: bold;
-    color: #333;
+    color: #007bb5;
 }
 
 form input,
@@ -179,7 +174,7 @@ form select,
 form textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #b0bec5;
     border-radius: 5px;
     font-size: 1em;
 }
@@ -190,7 +185,7 @@ form textarea {
 }
 
 form button {
-    background-color: #007bff;
+    background-color: #007bb5;
     color: white;
     border: none;
     border-radius: 5px;
@@ -201,13 +196,13 @@ form button {
 }
 
 form button:hover {
-    background-color: #0056b3;
+    background-color: #005b88;
 }
 
 form input:focus,
 form select:focus,
 form textarea:focus {
     outline: none;
-    border: 1px solid #007bff;
+    border: 1px solid #007bb5;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
