@@ -101,54 +101,51 @@
 
 .footer {
     display: flex;
-    flex-direction: row;
-    align-items: space-between;
-    justify-content: space-between;
-    padding: 25px;
-    flex-wrap: wrap;
-    position: relative;
-    bottom: 0;
-    margin-bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
     width: 100%;
     background-color: gray;
     color: white;
+    text-align: center;
 }
 
 .footer-container {
     display: flex;
-    flex-direction: row;
-    align-items: start;
-    justify-content: start;
-    flex-wrap: wrap;
-}
-
-.footer-text {
-    text-align: center;
-    margin-top: 15px;
-    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .footer ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     list-style: none;
-    margin-right: 100px;
+    padding: 0;
+    gap: 15px;
+    margin: 10px 0;
 }
 
 .footer li {
-    padding: 5px;
+    padding: 0;
 }
 
 .footer li a {
     text-decoration: none;
-    padding: 5px;
     color: white;
+    transition: color 0.3s;
 }
 
 .footer li a:hover {
     color: #FFD700;
+}
+
+.footer-text {
+    margin: 10px 0;
 }
 
 form {
@@ -205,4 +202,20 @@ form textarea:focus {
     outline: none;
     border: 1px solid #007bb5;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.chart-container {
+    width: 50%; 
+    margin: 20px auto;
+    padding: 10px; 
+    border: 2px solid #007bb5;
+    border-radius: 10px; 
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    text-align: center; 
+}
+
+canvas {
+    max-width: 50%;
+    max-height: 400px;
 }
