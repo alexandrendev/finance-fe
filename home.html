@@ -13,13 +13,16 @@
         <a href="cadastrarDespesa.html" class="nav-item">Cadastrar Despesa</a>
         <a href="minhasDespesas.html" class="nav-item">Minhas Despesas</a>
     </div>
-
+    
     <div class="container">
         <div class="card">
             <p>Seu orçamento é de: <span id="totalOrcamento">4870,00R$</span></p>
             <br>
             <button class="btn" id="btnAlterar">Alterar</button>
         </div>
+    </div>
+    <div class="container">
+        
         
         <canvas id="expensesChart"></canvas>
 
@@ -72,11 +75,10 @@
         let labels = ["Conta de Luz", "Internet", "Telefone", "Gás", "Condomínio"];
         let data = [100, 120, 50, 45, 250];
         let totalBudget = data.reduce((sum, value) => sum + value, 0);
-
-
+    
         const totalOrcamento = document.getElementById('totalOrcamento');
         totalOrcamento.innerText = `${totalBudget.toFixed(2)}R$`; 
-
+    
         const ctx = document.getElementById('expensesChart').getContext('2d');
         const expensesChart = new Chart(ctx, {
             type: 'bar',
@@ -111,7 +113,7 @@
                 }
             }
         });
-
+    
         // Função para criar gráficos de pizza
         function createPieChart(ctx, data) {
             return new Chart(ctx, {
@@ -137,31 +139,47 @@
                 }
             });
         }
-
+    
         const ctx1 = document.getElementById('chart1').getContext('2d');
         const ctx2 = document.getElementById('chart2').getContext('2d');
         const ctx3 = document.getElementById('chart3').getContext('2d');
-
+    
         createPieChart(ctx1, [data[4], data[1], data[0]]);
-
-
+    
         const modal = document.getElementById('myModal');
         const btn = document.getElementById('btnAlterar');
         const span = document.getElementsByClassName('close')[0];
-
+    
         btn.onclick = function() {
             modal.style.display = 'block';
         }
-
+    
         span.onclick = function() {
             modal.style.display = 'none';
         }
-
+    
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = 'none';
             }
         }
+    
+        const orcamentoForm = document.getElementById('orcamentoForm');
+        orcamentoForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const novoOrcamento = parseFloat(document.getElementById('contaLuz').value);
+    
+            totalBudget = novoOrcamento;
+    
+            totalOrcamento.innerText = `${totalBudget.toFixed(2)}R$`;
+    
+            expensesChart.data.datasets[0].data = Array(labels.length).fill(novoOrcamento / labels.length);
+            expensesChart.update();
+    
+            modal.style.display = 'none';
+        });
     </script>
+    
 </body>
 </html>
