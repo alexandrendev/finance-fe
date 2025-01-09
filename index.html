@@ -14,9 +14,34 @@
         <a href="minhasDespesas.html" class="nav-item">Minhas Despesas</a>
     </div>
 
-    <!-- Gráfico -->
     <div class="container">
-        <canvas id="expensesChart" ></canvas>
+        <div class="card">
+            <p>Seu orçamento é de: <span id="totalOrcamento">4870,00R$</span></p>
+            <br>
+            <button class="btn" id="btnAlterar">Alterar</button>
+        </div>
+        
+        <canvas id="expensesChart"></canvas>
+
+        <div class="mini-chart-container">
+            <canvas id="chart1" class="mini-chart"></canvas>
+            <canvas id="chart2" class="mini-chart"></canvas>
+            <canvas id="chart3" class="mini-chart"></canvas>
+        </div>
+    </div>
+
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Alterar Orçamento</h2>
+            <form id="orcamentoForm">
+                <label for="contaLuz">Novo Orçamento:</label>
+                <input type="number" id="contaLuz" name="contaLuz" value="00,00R$">
+
+                <button type="submit" class="btn">Salvar Alterações</button>
+            </form>
+        </div>
     </div>
 
     <footer class="footer">
@@ -44,13 +69,18 @@
     </footer>
 
     <script>
-        // Dados do gráfico
-        const labels = ["Conta de Luz", "Conta", "Internet", "Telefone", "Gás", "Condomínio", "Salário"];
-        const data = [100, 70, 120, 50, 45, 250, 4000]; 
+        let labels = ["Conta de Luz", "Internet", "Telefone", "Gás", "Condomínio"];
+        let data = [100, 120, 50, 45, 250];
+        let totalBudget = data.reduce((sum, value) => sum + value, 0);
 
+
+        const totalOrcamento = document.getElementById('totalOrcamento');
+        totalOrcamento.innerText = `${totalBudget.toFixed(2)}R$`; 
+
+        // Gráfico de barras principal
         const ctx = document.getElementById('expensesChart').getContext('2d');
         const expensesChart = new Chart(ctx, {
-            type: 'bar', 
+            type: 'bar',
             data: {
                 labels: labels,
                 datasets: [{
@@ -61,18 +91,14 @@
                         'rgba(153, 102, 255, 0.2)',
                         'rgba(255, 159, 64, 0.2)',
                         'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(46, 204, 113, 0.2)'
+                        'rgba(54, 162, 235, 0.2)'
                     ],
                     borderColor: [
                         'rgba(75, 192, 192, 1)',
                         'rgba(153, 102, 255, 1)',
                         'rgba(255, 159, 64, 1)',
                         'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(46, 204, 113, 1)'
+                        'rgba(54, 162, 235, 1)'
                     ],
                     borderWidth: 1
                 }]
@@ -86,6 +112,57 @@
                 }
             }
         });
+
+        // Função para criar gráficos de pizza
+        function createPieChart(ctx, data) {
+            return new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: labels.slice(0, 3),
+                    datasets: [{
+                        data: data,
+                        backgroundColor: [
+                            'rgba(46, 204, 113, 0.6)',
+                            'rgba(255, 159, 64, 0.6)',
+                            'rgba(75, 192, 192, 0.6)'
+                        ],
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        },
+                    }
+                }
+            });
+        }
+
+        const ctx1 = document.getElementById('chart1').getContext('2d');
+        const ctx2 = document.getElementById('chart2').getContext('2d');
+        const ctx3 = document.getElementById('chart3').getContext('2d');
+
+        createPieChart(ctx1, [data[4], data[1], data[0]]);
+
+
+        const modal = document.getElementById('myModal');
+        const btn = document.getElementById('btnAlterar');
+        const span = document.getElementsByClassName('close')[0];
+
+        btn.onclick = function() {
+            modal.style.display = 'block';
+        }
+
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>

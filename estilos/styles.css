@@ -38,9 +38,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
+    height: 100vh;
     background-color: #e0f7fa;
-    justify-content: center;
+    justify-content: space-around;
     align-items: start;
+    padding: 20px;
+    
 }
 
 .content {
@@ -86,6 +89,7 @@
 }
 
 .btn {
+    margin-top: 10px;
     background-color: #007bb5;
     color: white;
     border: none;
@@ -109,6 +113,11 @@
     background-color: gray;
     color: white;
     text-align: center;
+
+    position: fixed; /* Torna o rodapé fixo na parte inferior */
+    bottom: 0; /* Coloca o rodapé na parte inferior da tela */
+    left: 0;
+    z-index: 1000;
 }
 
 .footer-container {
@@ -216,6 +225,83 @@ form textarea:focus {
 }
 
 canvas {
-    max-width: 50%;
-    max-height: 400px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+#expensesChart {
+    width: 100%;
+    height: 250px;
+}
+
+.mini-chart-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.mini-chart {
+    width: 30%;
+    height: 150px;
+}
+
+.card {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Modal - Container */
+.modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro */
+}
+
+/* Modal - Conteúdo */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 40%;
+}
+
+/* Botão para fechar o modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo dos campos de input */
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
