@@ -1,0 +1,153 @@
+/* Resetando margens e preenchimento, definindo fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    background-color: #007bb5;
+    padding: 10px;
+}
+
+.nav-item {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav-item:hover {
+    background-color: #005f7f;
+    border-radius: 5px;
+}
+
+/* Estilo do título da seção */
+.section-title {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title h1 {
+    font-size: 2em;
+    color: #007bb5;
+}
+
+/* Estilo da container das despesas */
+.container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Estilo dos itens da lista */
+.despesa-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.despesa-item {
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.despesa-item:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo do card de despesa */
+.card-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.descricao {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.valor {
+    font-size: 1.2em;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #007bb5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #005f7f;
+}
+
+/* Estilo do rodapé */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+.footer-text {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.footer-container ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-container li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.footer-container li a:hover {
+    color: #ffd700;
+}
+
+.footer-text p {
+    margin-top: 20px;
+}
