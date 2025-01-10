@@ -10,7 +10,12 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    background-color: #e0f7fa;
+}
+
+h1 {
+    font-size: 2em;
+    color: #007bb5;
+    align-self: center;
 }
 
 .content {
@@ -241,8 +246,8 @@ form textarea:focus {
 }
 
 canvas {
-    max-width: 70%;
-    max-height: 70%;
+    max-width: 50%;
+    max-height: 90%;
 }
 
 #expensesChart {
