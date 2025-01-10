@@ -1,4 +1,3 @@
-/* Resetando margens e preenchimento, definindo fonte */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +6,7 @@
 }
 
 body {
-    background-color: #f4f4f9;
+    background-color: #ffffff;
     font-size: 16px;
     color: #333;
     line-height: 1.6;
@@ -34,7 +33,7 @@ body {
     border-radius: 5px;
 }
 
-/* Estilo do título da seção */
+
 .section-title {
     background-color: #ffffff;
     padding: 20px;
@@ -47,7 +46,6 @@ body {
     color: #007bb5;
 }
 
-/* Estilo da container das despesas */
 .container {
     padding: 20px;
     display: flex;
@@ -56,7 +54,6 @@ body {
     gap: 20px;
 }
 
-/* Estilo dos itens da lista */
 .despesa-list {
     list-style: none;
     padding: 0;
@@ -81,7 +78,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Estilo do card de despesa */
 .card-title {
     font-size: 1.5em;
     color: #333;
@@ -115,7 +111,6 @@ body {
     background-color: #005f7f;
 }
 
-/* Estilo do rodapé */
 .footer {
     background-color: #333;
     color: white;
